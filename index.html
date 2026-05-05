@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ananya Gujral</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#0f0f0f;--ink2:#3a3a3a;--ink3:#7a7a7a;
+  --bg:#fafaf8;--white:#ffffff;--line:rgba(0,0,0,0.1);
+  --green:#1a6b3c;--green-bg:#eef5f0;--green-soft:#d4ead9;
+  --teal:#0f5e6e;--teal-bg:#e8f4f6;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Syne',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,0.95);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:60px;}
+.nav-name{font-family:'Instrument Serif',serif;font-size:18px;color:var(--ink);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:var(--ink3);text-decoration:none;font-size:13px;letter-spacing:0.3px;transition:color 0.2s;}
+.nav-links a:hover{color:var(--ink);}
+.hero{min-height:100vh;display:flex;align-items:center;padding:80px 6% 60px;border-bottom:1px solid var(--line);}
+.hero-inner{max-width:760px;}
+.hero-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);font-weight:500;margin-bottom:24px;display:flex;align-items:center;gap:8px;}
+.hero-label::before{content:'';width:24px;height:1px;background:var(--green);display:block;}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(40px,6vw,72px);color:var(--ink);line-height:1.1;margin-bottom:28px;font-weight:400;letter-spacing:-0.5px;}
+h1 em{font-style:italic;color:var(--teal);}
+.hero-sub{color:var(--ink2);font-size:16px;line-height:1.85;max-width:560px;margin-bottom:44px;font-weight:300;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:44px;}
+.tag{background:var(--white);border:1px solid var(--line);color:var(--ink2);font-size:12px;padding:6px 14px;border-radius:20px;letter-spacing:0.3px;}
+.tag-green{background:var(--green-bg);border-color:var(--green-soft);color:var(--green);}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-dark{background:var(--ink);color:var(--white);padding:12px 28px;border-radius:3px;text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.5px;transition:background 0.2s;display:inline-block;}
+.btn-dark:hover{background:#333;}
+.btn-ghost{background:transparent;color:var(--ink);padding:12px 28px;border:1px solid var(--line);border-radius:3px;text-decoration:none;font-size:13px;transition:border-color 0.2s;display:inline-block;}
+.btn-ghost:hover{border-color:var(--ink);}
+section{padding:80px 6%;}
+.sec-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink3);font-weight:500;margin-bottom:8px;}
+.sec-title{font-family:'Instrument Serif',serif;font-size:clamp(26px,3vw,38px);color:var(--ink);line-height:1.2;margin-bottom:48px;font-weight:400;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.about-text p{color:var(--ink2);font-size:15px;line-height:1.9;margin-bottom:18px;font-weight:300;}
+.skills-block{border-top:1px solid var(--line);padding-top:32px;}
+.skill-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);}
+.skill-name{font-size:14px;color:var(--ink);}
+.skill-bar-wrap{width:120px;height:3px;background:var(--line);border-radius:2px;}
+.skill-bar{height:3px;background:var(--green);border-radius:2px;}
+.projects{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.project-card{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:24px;background:var(--bg);transition:border-color 0.2s;}
+.project-card:hover{border-color:rgba(0,0,0,0.25);}
+.project-card:last-child{margin-bottom:0;}
+.project-map{height:180px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.map-delhi{background:#e8f0e8;}
+.map-sg{background:#e8eef5;}
+.map-svg{width:100%;height:100%;}
+.project-body{padding:28px 32px;}
+.project-num{font-size:11px;letter-spacing:2px;color:var(--ink3);text-transform:uppercase;margin-bottom:10px;}
+.project-title{font-family:'Instrument Serif',serif;font-size:22px;color:var(--ink);margin-bottom:12px;line-height:1.3;}
+.project-desc{color:var(--ink2);font-size:14px;line-height:1.85;margin-bottom:20px;font-weight:300;}
+.project-methods{display:flex;flex-wrap:wrap;gap:6px;}
+.method-tag{background:var(--teal-bg);color:var(--teal);font-size:11px;padding:4px 10px;border-radius:3px;letter-spacing:0.3px;font-weight:500;}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+.skill-card{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:20px 22px;}
+.skill-card-icon{width:32px;height:32px;border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:16px;}
+.skill-card-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px;}
+.skill-card-desc{font-size:13px;color:var(--ink3);line-height:1.6;}
+.contact-wrap{max-width:580px;}
+.contact-wrap p{color:var(--ink2);font-size:15px;line-height:1.85;margin-bottom:36px;font-weight:300;}
+.contact-links{display:flex;flex-direction:column;gap:0;}
+.contact-link{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:color 0.2s;}
+.contact-link:hover{color:var(--green);}
+.contact-link:first-child{border-top:1px solid var(--line);}
+.cl-label{font-size:13px;}
+.cl-val{font-size:13px;color:var(--ink3);}
+.cl-val-link{font-size:13px;color:var(--green);}
+footer{background:var(--ink);padding:36px 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-name{font-family:'Instrument Serif',serif;color:var(--white);font-size:16px;}
+.footer-copy{color:rgba(255,255,255,0.35);font-size:12px;}
+@media(max-width:680px){.about-grid{grid-template-columns:1fr;}.nav-links{display:none;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Ananya Gujral</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">GIS Portfolio</div>
+    <h1>Mapping data to <em>understand policy</em></h1>
+    <p class="hero-sub">I'm Ananya Gujral, an Economics & Geography student at the National University of Singapore. I use GIS and spatial analysis to examine government policies and their real-world implications.</p>
+    <div class="hero-tags">
+      <span class="tag tag-green">Spatial Analysis</span>
+      <span class="tag tag-green">Buffer Analysis</span>
+      <span class="tag tag-green">Policy Research</span>
+      <span class="tag">NUS Geography</span>
+      <span class="tag">Economics</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-dark">View Projects</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <div class="sec-label">About</div>
+      <h2 class="sec-title">Geography meets economics</h2>
+      <div class="about-text">
+        <p>I'm a student at the National University of Singapore studying Economics and Geography, with a growing passion for Geographic Information Systems as a tool for evidence-based analysis.</p>
+        <p>My interest lies at the intersection of spatial data and public policy — using maps and analysis to ask questions about equity, environment, and governance that traditional data often misses.</p>
+        <p>I've completed GIS modules at the 2000 and 3000 level at NUS, where I built skills in buffer analysis, spatial querying, cost-distance modelling, and policy application.</p>
+      </div>
+    </div>
+    <div>
+      <div class="skills-block">
+        <div class="sec-label" style="margin-bottom:20px;">Technical proficiency</div>
+        <div class="skill-row"><span class="skill-name">Buffer Analysis</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%;"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Spatial Analysis</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%;"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Cost-Distance Modelling</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%;"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Choropleth Mapping</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:78%;"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Policy Data Analysis</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%;"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div style="padding:80px 6%;">
+    <div class="sec-label">Selected Work</div>
+    <h2 class="sec-title">Projects</h2>
+
+    <div class="project-card">
+      <div class="project-map map-delhi">
+        <svg class="map-svg" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="680" height="180" fill="#dde8dd"/>
+          <ellipse cx="340" cy="90" rx="260" ry="65" fill="#c8d8c8" opacity="0.6"/>
+          <ellipse cx="180" cy="70" rx="80" ry="40" fill="#b8ccb8" opacity="0.5"/>
+          <ellipse cx="160" cy="68" rx="50" ry="28" fill="#9eb89e" opacity="0.6"/>
+          <circle cx="340" cy="90" r="10" fill="#c0392b" opacity="0.8"/>
+          <circle cx="340" cy="90" r="22" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/>
+          <circle cx="340" cy="90" r="38" fill="none" stroke="#c0392b" stroke-width="1" stroke-dasharray="3 4" opacity="0.3"/>
+          <line x1="160" y1="68" x2="340" y2="90" stroke="#555" stroke-width="1" stroke-dasharray="5 3" opacity="0.4"/>
+          <text x="148" y="118" font-size="10" fill="#3a5a3a" font-family="sans-serif">Punjab / Haryana</text>
+          <text x="316" y="115" font-size="10" fill="#7a1a1a" font-family="sans-serif">Delhi NCR</text>
+          <text x="30" y="30" font-size="11" fill="#2a4a2a" font-family="sans-serif" font-weight="500">AQI Dispersion — Stubble Burning Origins</text>
+        </svg>
+      </div>
+      <div class="project-body">
+        <div class="project-num">Project 01</div>
+        <div class="project-title">Analysis of Poor AQI in Delhi Due to Stubble Burning</div>
+        <p class="project-desc">An investigation into Delhi's air quality crisis using spatial data to trace the origins of pollution to stubble burning practices in the northwest — primarily Punjab and Haryana. The project maps seasonal AQI deterioration and uses spatial analysis to quantify the relationship between agricultural burning locations and pollution levels recorded in Delhi.</p>
+        <div class="project-methods">
+          <span class="method-tag">Spatial Analysis</span>
+          <span class="method-tag">AQI Data</span>
+          <span class="method-tag">Wind Trajectory Modelling</span>
+          <span class="method-tag">Policy Implications</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div style="background:#e8eef5;">
+        <!-- Main image -->
+        <img src="Image.jpg" alt="Residential Vulnerability to Green Space Inaccessibility" style="width:100%;max-height:260px;object-fit:cover;display:block;"/>
+        <!-- Gallery strip -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:3px;">
+          <img src="Image__1_.jpg" alt="Green Space Accessibility Central Singapore" style="width:100%;height:110px;object-fit:cover;display:block;cursor:pointer;" onclick="this.closest('.project-card').querySelector('.lightbox').style.display='flex';this.closest('.project-card').querySelector('.lb-img').src=this.src"/>
+          <img src="Image__2_.jpg" alt="Buildings with/without park access" style="width:100%;height:110px;object-fit:cover;display:block;cursor:pointer;" onclick="this.closest('.project-card').querySelector('.lightbox').style.display='flex';this.closest('.project-card').querySelector('.lb-img').src=this.src"/>
+          <img src="Image__3_.jpg" alt="Green Space buffer and household income" style="width:100%;height:110px;object-fit:cover;display:block;cursor:pointer;" onclick="this.closest('.project-card').querySelector('.lightbox').style.display='flex';this.closest('.project-card').querySelector('.lb-img').src=this.src"/>
+          <img src="Image__4_.jpg" alt="Pedestrian Accessibility to Parks" style="width:100%;height:110px;object-fit:cover;display:block;cursor:pointer;" onclick="this.closest('.project-card').querySelector('.lightbox').style.display='flex';this.closest('.project-card').querySelector('.lb-img').src=this.src"/>
+        </div>
+        <p style="font-size:11px;color:var(--ink3);text-align:center;padding:8px 0 4px;margin:0;">Click any thumbnail to enlarge</p>
+        <!-- Lightbox -->
+        <div class="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999;align-items:center;justify-content:center;" onclick="this.style.display='none'">
+          <img class="lb-img" src="" style="max-width:92vw;max-height:90vh;object-fit:contain;border-radius:4px;"/>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-num">Project 02</div>
+        <div class="project-title">Equity of Parks and Green Spaces in Singapore Residential Areas</div>
+        <p class="project-desc">A spatial equity analysis examining whether parks and green spaces are distributed fairly across Singapore's residential neighbourhoods. Using buffer analysis to define accessibility zones around parks and cost-distance modelling to capture real pedestrian access, the project identifies underserved areas and evaluates the equity implications for urban planning policy.</p>
+        <div class="project-methods">
+          <span class="method-tag">Buffer Analysis</span>
+          <span class="method-tag">Cost-Distance Analysis</span>
+          <span class="method-tag">Spatial Equity</span>
+          <span class="method-tag">Urban Policy</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-map" style="background:#e0ede8;">
+        <svg class="map-svg" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="680" height="180" fill="#d4e8df"/>
+          <ellipse cx="340" cy="95" rx="240" ry="60" fill="#b8d9c8" opacity="0.7"/>
+          <ellipse cx="280" cy="100" rx="100" ry="40" fill="#8fc4a8" opacity="0.6"/>
+          <ellipse cx="400" cy="88" rx="80" ry="32" fill="#8fc4a8" opacity="0.5"/>
+          <ellipse cx="200" cy="110" rx="50" ry="22" fill="#72b494" opacity="0.5"/>
+          <line x1="270" y1="60" x2="310" y2="95" stroke="#2a6a4a" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+          <line x1="370" y1="55" x2="340" y2="88" stroke="#2a6a4a" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+          <line x1="450" y1="65" x2="410" y2="88" stroke="#2a6a4a" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+          <polygon points="270,60 262,72 278,72" fill="#1a5a3a" opacity="0.7"/>
+          <polygon points="370,55 362,67 378,67" fill="#1a5a3a" opacity="0.7"/>
+          <polygon points="450,65 442,77 458,77" fill="#1a5a3a" opacity="0.7"/>
+          <rect x="248" y="48" width="44" height="14" rx="3" fill="rgba(255,255,255,0.85)"/>
+          <text x="270" y="59" font-size="8" fill="#1a5a3a" font-family="sans-serif" text-anchor="middle">Drone</text>
+          <rect x="348" y="43" width="44" height="14" rx="3" fill="rgba(255,255,255,0.85)"/>
+          <text x="370" y="54" font-size="8" fill="#1a5a3a" font-family="sans-serif" text-anchor="middle">Drone</text>
+          <rect x="428" y="53" width="44" height="14" rx="3" fill="rgba(255,255,255,0.85)"/>
+          <text x="450" y="64" font-size="8" fill="#1a5a3a" font-family="sans-serif" text-anchor="middle">Drone</text>
+          <text x="30" y="30" font-size="11" fill="#1a4a2a" font-family="sans-serif" font-weight="500">Mangrove Restoration Mapping — Sabah, Borneo</text>
+          <rect x="30" y="148" width="110" height="18" rx="3" fill="rgba(255,255,255,0.7)"/>
+          <text x="85" y="161" font-size="9" fill="#1a5a3a" font-family="sans-serif" text-anchor="middle">Fieldwork in progress</text>
+        </svg>
+      </div>
+      <div class="project-body">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+          <div class="project-num">Project 03</div>
+          <span style="background:#fff8e6;color:#8a5a00;font-size:11px;padding:4px 10px;border-radius:3px;font-weight:500;letter-spacing:0.3px;border:1px solid #f0d080;">Fieldwork in Progress</span>
+        </div>
+        <div class="project-title">Drone Mapping of Mangrove Restoration in Sabah & Borneo</div>
+        <p class="project-desc">An upcoming field research project using drone photogrammetry and DroneDeploy to map and assess mangrove forest restoration sites in Sabah, Malaysian Borneo. The project aims to generate high-resolution orthomosaics and elevation models to monitor restoration progress, canopy coverage, and ecosystem recovery — contributing to conservation research led by Prof Gretchen Coffman at NUS.</p>
+        <div class="project-methods">
+          <span class="method-tag">Drone Mapping</span>
+          <span class="method-tag">DroneDeploy</span>
+          <span class="method-tag">Photogrammetry</span>
+          <span class="method-tag">Mangrove Conservation</span>
+          <span class="method-tag">Remote Sensing</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-label">Capabilities</div>
+  <h2 class="sec-title">GIS Skills & Tools</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><div class="skill-card-icon" style="background:#eef5f0;">🗺</div><div class="skill-card-title">Spatial Analysis</div><p class="skill-card-desc">Querying and analysing geographic datasets to reveal patterns and relationships.</p></div>
+    <div class="skill-card"><div class="skill-card-icon" style="background:#eef5f0;">📐</div><div class="skill-card-title">Buffer Analysis</div><p class="skill-card-desc">Defining proximity zones to assess accessibility and coverage of services.</p></div>
+    <div class="skill-card"><div class="skill-card-icon" style="background:#e8eef5;">📊</div><div class="skill-card-title">Cost-Distance Modelling</div><p class="skill-card-desc">Modelling real-world travel costs across terrain for equity analysis.</p></div>
+    <div class="skill-card"><div class="skill-card-icon" style="background:#f5eef5;">📈</div><div class="skill-card-title">Policy Data Analysis</div><p class="skill-card-desc">Connecting spatial outputs to economic and governance questions.</p></div>
+    <div class="skill-card"><div class="skill-card-icon" style="background:#f5f0e8;">🏙</div><div class="skill-card-title">Choropleth Mapping</div><p class="skill-card-desc">Visualising statistical data across geographic regions clearly.</p></div>
+    <div class="skill-card"><div class="skill-card-icon" style="background:#eef5f0;">🌿</div><div class="skill-card-title">Environmental GIS</div><p class="skill-card-desc">Applying spatial tools to environmental datasets like AQI and land cover.</p></div>
+  </div>
+</section>
+
+<section id="writing" style="background:var(--bg);border-top:1px solid var(--line);">
+  <div class="sec-label">Writing</div>
+  <h2 class="sec-title">Essays & Opinion</h2>
+  <p style="color:var(--ink2);font-size:15px;line-height:1.85;max-width:600px;margin-bottom:48px;font-weight:300;">I write about environmental issues, sustainability, and the politics of ecological decision-making. Published on Medium.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+
+    <div style="background:var(--white);border:1px solid var(--line);border-radius:6px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(0,0,0,0.25)'" onmouseout="this.style.borderColor='rgba(0,0,0,0.1)'">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span style="background:var(--green-bg);color:var(--green);font-size:11px;padding:4px 10px;border-radius:3px;font-weight:500;letter-spacing:0.3px;">Sustainability</span>
+        <span style="background:#f5f0e8;color:#7a4a0a;font-size:11px;padding:4px 10px;border-radius:3px;font-weight:500;letter-spacing:0.3px;">Consumer Behaviour</span>
+      </div>
+      <div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--ink);line-height:1.3;">Greenwashing 101: How Your Emotions Fuel Corporate Profits</div>
+      <p style="color:var(--ink2);font-size:14px;line-height:1.8;font-weight:300;flex:1;">What if the "eco-friendly" label on your favourite product meant almost nothing? This piece unpacks how corporations exploit our desire to be responsible consumers — turning genuine environmental concern into a marketing strategy.</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--line);">
+        <span style="font-size:12px;color:var(--ink3);">Oct 2025 · 4 min read</span>
+        <a href="https://medium.com/@ananyagujral2/greenwashing-101-how-your-emotions-fuel-corporate-profits-6b81add11ec8" target="_blank" style="font-size:13px;color:var(--green);text-decoration:none;font-weight:500;letter-spacing:0.3px;">Read on Medium →</a>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--line);border-radius:6px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(0,0,0,0.25)'" onmouseout="this.style.borderColor='rgba(0,0,0,0.1)'">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span style="background:var(--teal-bg);color:var(--teal);font-size:11px;padding:4px 10px;border-radius:3px;font-weight:500;letter-spacing:0.3px;">Environment</span>
+        <span style="background:#f5eef5;color:#6a2a6a;font-size:11px;padding:4px 10px;border-radius:3px;font-weight:500;letter-spacing:0.3px;">Policy</span>
+      </div>
+      <div style="font-family:'Instrument Serif',serif;font-size:20px;color:var(--ink);line-height:1.3;">The Aravallis on the Balance Sheet</div>
+      <p style="color:var(--ink2);font-size:14px;line-height:1.8;font-weight:300;flex:1;">A 2-billion-year-old mountain range — the ecological lung of North India — now faces destruction after a Supreme Court ruling redefines its boundaries, leaving 91% of the hills unprotected from mining and development.</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--line);">
+        <span style="font-size:12px;color:var(--ink3);">Dec 2025 · 5 min read</span>
+        <a href="https://medium.com/@ananyagujral2/the-aravallis-on-the-balance-sheet-a36fdc8b4194" target="_blank" style="font-size:13px;color:var(--green);text-decoration:none;font-weight:500;letter-spacing:0.3px;">Read on Medium →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="background:var(--white);border-top:1px solid var(--line);" id="contact">
+  <div class="sec-label">Contact</div>
+  <h2 class="sec-title">Get in touch</h2>
+  <div class="contact-wrap">
+    <p>I'm always open to conversations about GIS, urban policy, environmental research, or collaboration. Feel free to reach out.</p>
+    <div class="contact-links">
+      <a href="mailto:ananyagujral2@gmail.com" class="contact-link">
+        <span class="cl-label">Email</span>
+        <span class="cl-val-link">ananyagujral2@gmail.com</span>
+      </a>
+      <div class="contact-link">
+        <span class="cl-label">University</span>
+        <span class="cl-val">National University of Singapore</span>
+      </div>
+      <div class="contact-link">
+        <span class="cl-label">Programme</span>
+        <span class="cl-val">Economics & Geography</span>
+      </div>
+      <div class="contact-link">
+        <span class="cl-label">Based in</span>
+        <span class="cl-val">Singapore</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Ananya Gujral</div>
+  <div class="footer-copy">GIS Portfolio · National University of Singapore</div>
+</footer>
+
+</body>
+</html>
