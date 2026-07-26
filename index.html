@@ -239,24 +239,38 @@ footer{background:var(--ink);padding:36px 6%;display:flex;align-items:center;jus
           <text x="370" y="54" font-size="8" fill="#1a5a3a" font-family="sans-serif" text-anchor="middle">Drone</text>
           <rect x="428" y="53" width="44" height="14" rx="3" fill="rgba(255,255,255,0.85)"/>
           <text x="450" y="64" font-size="8" fill="#1a5a3a" font-family="sans-serif" text-anchor="middle">Drone</text>
-          <text x="30" y="30" font-size="11" fill="#1a4a2a" font-family="sans-serif" font-weight="500">Mangrove Restoration Mapping — Sabah, Borneo</text>
-          <rect x="30" y="148" width="110" height="18" rx="3" fill="rgba(255,255,255,0.7)"/>
-          <text x="85" y="161" font-size="9" fill="#1a5a3a" font-family="sans-serif" text-anchor="middle">Fieldwork in progress</text>
+          <text x="30" y="30" font-size="11" fill="#1a4a2a" font-family="sans-serif" font-weight="500">Wildlife Corridor Mapping — Sabah, Borneo</text>
         </svg>
+      </div>
+      <!-- Horizontal scrollable map strip -->
+      <div style="padding:16px 20px 12px;border-top:1px solid var(--line);">
+        <p style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin:0 0 12px;font-weight:500;">Project Maps — scroll to explore →</p>
+        <div style="display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:rgba(0,0,0,0.15) transparent;">
+          <img src="borneo1.jpg" alt="Plant Health Map, TREC Site" style="height:150px;width:auto;flex-shrink:0;border-radius:4px;border:1px solid var(--line);cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" onclick="document.getElementById('bn-lightbox').style.display='flex';document.getElementById('bn-lb-img').src=this.src"/>
+          <img src="borneo2.jpg" alt="Plant Health Detail, TREC Site" style="height:150px;width:auto;flex-shrink:0;border-radius:4px;border:1px solid var(--line);cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" onclick="document.getElementById('bn-lightbox').style.display='flex';document.getElementById('bn-lb-img').src=this.src"/>
+          <img src="borneo3.jpg" alt="Plant Health Distribution Histogram" style="height:150px;width:auto;flex-shrink:0;border-radius:4px;border:1px solid var(--line);cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" onclick="document.getElementById('bn-lightbox').style.display='flex';document.getElementById('bn-lb-img').src=this.src"/>
+          <img src="borneo4.jpg" alt="NDVI Map, APE Site 5" style="height:150px;width:auto;flex-shrink:0;border-radius:4px;border:1px solid var(--line);cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" onclick="document.getElementById('bn-lightbox').style.display='flex';document.getElementById('bn-lb-img').src=this.src"/>
+          <img src="borneo6.jpg" alt="NDVI Map, APE Site 6" style="height:150px;width:auto;flex-shrink:0;border-radius:4px;border:1px solid var(--line);cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" onclick="document.getElementById('bn-lightbox').style.display='flex';document.getElementById('bn-lb-img').src=this.src"/>
+        </div>
+      </div>
+      <!-- Lightbox -->
+      <div id="bn-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;" onclick="this.style.display='none'">
+        <img id="bn-lb-img" src="" style="max-width:92vw;max-height:90vh;object-fit:contain;border-radius:6px;"/>
+        <div style="position:absolute;top:20px;right:28px;color:white;font-size:28px;cursor:pointer;" onclick="document.getElementById('bn-lightbox').style.display='none'">✕</div>
       </div>
       <div class="project-body">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
           <div class="project-num">Project 03</div>
-          <span style="background:#fff8e6;color:#8a5a00;font-size:11px;padding:4px 10px;border-radius:3px;font-weight:500;letter-spacing:0.3px;border:1px solid #f0d080;">Fieldwork in Progress</span>
+          <span style="background:var(--green-bg);color:var(--green);font-size:11px;padding:4px 10px;border-radius:3px;font-weight:500;letter-spacing:0.3px;border:1px solid var(--green-soft);">Completed</span>
         </div>
-        <div class="project-title">Drone Mapping of Mangrove Restoration in Sabah & Borneo</div>
-        <p class="project-desc">An upcoming field research project using drone photogrammetry and DroneDeploy to map and assess mangrove forest restoration sites in Sabah, Malaysian Borneo. The project aims to generate high-resolution orthomosaics and elevation models to monitor restoration progress, canopy coverage, and ecosystem recovery — contributing to conservation research led by Prof Gretchen Coffman at NUS.</p>
+        <div class="project-title">Mapping of Wildlife Corridors in Sabah, Borneo</div>
+        <p class="project-desc">A field research project using drone photogrammetry and DroneDeploy in Sabah, Malaysian Borneo, under Prof Gretchen Coffman (NUS). With APE Malaysia, mapped wildlife corridors and generated NDVI orthomosaics to monitor restoration progress at APE Site 5 and Site 6. With KOPEL, used drone surveys to monitor the spread of the invasive aquatic fern <em>Salvinia molesta</em>.</p>
         <div class="project-methods">
           <span class="method-tag">Drone Mapping</span>
           <span class="method-tag">DroneDeploy</span>
-          <span class="method-tag">Photogrammetry</span>
-          <span class="method-tag">Mangrove Conservation</span>
-          <span class="method-tag">Remote Sensing</span>
+          <span class="method-tag">Wildlife Corridors</span>
+          <span class="method-tag">Invasive Species Monitoring</span>
+          <span class="method-tag">NDVI</span>
         </div>
       </div>
     </div>
